@@ -1,0 +1,77 @@
+/*
+$cyan: #60daaa;
+$yellow: #fbca67;
+$orange: #ff8a30;
+$red: #f45e61;
+$purple: #6477b9;
+$blue: #0eb7da;
+*/
+
+.divMain{
+  border-left:3px solid #f45e61;
+  padding:0px;
+}
+
+.divHeader{
+  padding:10px;
+  padding-left: 30px;
+  margin:0px;
+  background-color:#f45e61;
+  color:#fff;
+}
+
+.divContainer{
+  padding:20px;
+  padding-top:10px;
+}
+
+.fileListItem{
+    display: block; 
+    width: 100%; 
+    padding: 20px; 
+    position: relative; 
+    z-index: 2;
+    text-decoration: none;
+    box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box;
+    border-bottom: 1.5px dashed #646F58;
+    margin-top: 5px; 
+    color: #646F58;
+  }
+  .fileListItem:hover{ border-bottom: 0px; color: #fff;}
+    .fileListItem:hover .fileListItemIcon{ color: #fff;}
+    .fileListItem:hover .fileListItemIconTrash{ color: #fff; display: block;}
+    .fileListItem:hover .fileListItemIconUpload{ color: #fff; display: block;}
+  .fileListItem:after { 
+    content: "";
+    height: 100%; 
+    left: 0; 
+    top: 0; 
+    width: 0px;  
+    position: absolute; 
+    transition: all 0.3s ease 0s; 
+    -webkit-transition: all 0.3s ease 0s; 
+    z-index: -1;
+    background-color: #646F58;
+    color:#fff;
+    font-size: large;
+  }
+  .fileListItem:hover:after{ width: 100%; }
+
+.fileListItemIcon { 
+  color:#646F58;
+}
+
+.fileListItemIconTrash { 
+  color:rgb(214, 218, 210);
+  position:absolute;
+  right:2%;
+  display:none;
+}
+.fileListItemIconUpload { 
+  color:rgb(214, 218, 210);
+  position:absolute;
+  right:6%;
+  display:none;
+}

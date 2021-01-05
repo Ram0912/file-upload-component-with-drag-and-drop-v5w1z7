@@ -1,0 +1,38 @@
+<div class="row" style="margin:20px;">
+  <div class="col-sm-12 divMain">
+  <div class="col-sm-12 divHeader">
+    <h2>File Upload</h2>
+  </div>
+	<div class="col-sm-12 divContainer">
+		<mat-card>
+			<ng-container [formGroup]="parentForm">
+				<mat-form-field style="display: none;width:0px;">
+					<input matInput formControlName="formID">
+      </mat-form-field>
+					<mat-form-field style="display: none">
+						<input matInput formControlName="{{itemIDSpesification}}">
+      </mat-form-field>
+						<mat-form-field class="col-sm-12">
+							<input matInput formControlName="{{itemDefSpesification}}" placeholder="{{placeHolderText}}" [readonly]="true"
+            (change)="changeFile($event.target.files)">
+							<button mat-button type="button" matSuffix mat-icon-button aria-label="Upload" (click)="openModal()">
+          <mat-icon>search</mat-icon>
+        </button>
+						</mat-form-field>
+			</ng-container>
+		</mat-card>
+	</div>
+	<div class="col-sm-12 divContainer">
+		<div>
+			<mat-list>
+				<mat-list-item class="fileListItem"
+					*ngFor="let i of files;let ind = index" [@EnterLeave]="'flyIn'">
+					<mat-icon class="fileListItemIcon" mat-list-icon>folder</mat-icon>{{i.name}}
+          <i align="end" class="fileListItemIconTrash fa fa-trash" (click)="deleteFile(ind);"></i>
+          <i align="end" class="fileListItemIconUpload fa fa-upload" (click)="uploadFile(i);"></i>
+				</mat-list-item>
+			</mat-list>
+		</div>
+	</div>
+</div>
+</div>
